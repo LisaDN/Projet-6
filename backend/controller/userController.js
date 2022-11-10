@@ -29,7 +29,7 @@ exports.signup = (req, res, next) => {
     });
 };
 
-//vérification si l'utilisateur existe dans notre base de donée
+//vérification si l'utilisateur existe dans notre base de donnée
 
 exports.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
