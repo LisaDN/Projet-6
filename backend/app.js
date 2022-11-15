@@ -1,3 +1,9 @@
+//mise en place dotenv
+const dotenv = require("dotenv").config("../.env");
+
+//mise en place helmet
+const helmet = require("helmet");
+
 //Mise en place appli Express
 const express = require("express");
 const app = express();
@@ -11,7 +17,7 @@ const sauceRoute = require("./routes/sauceRoute");
 
 mongoose
   .connect(
-    "mongodb+srv://LisaDve:LuOeHgvND0mJ9KAB@cluster0.7tumcig.mongodb.net/test",
+    `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_CLUSTER_NAME}.mongodb.net/${process.env.MONGODB_DATABASE_NAME}`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -41,5 +47,6 @@ app.use("/images", express.static(path.join(__dirname, "images")));
 //initialisation routes
 app.use("/api/auth", userRoute);
 app.use("/api/sauces", sauceRoute);
+app.use(helmet());
 
 module.exports = app;
