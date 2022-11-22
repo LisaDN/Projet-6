@@ -45,9 +45,11 @@ exports.login = (req, res, next) => {
               .status(401)
               .json({ message: "Login ou mot de passe incorrecte" });
           }
+
+          //jwt.sign : chiffrer un nouveau token, ce token contient userID, la chaîne secrète pour crypter le token, la durée de validité du token
           res.status(200).json({
             userId: user._id,
-            token: jwt.sign({ userId: user._id }, "RANDOM_TOKEN_SECRET", {
+            token: jwt.sign({ userId: user._id }, `${process.env.TOKEN}`, {
               expiresIn: "24h",
             }),
           });

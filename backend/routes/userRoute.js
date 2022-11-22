@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../controller/userController");
+const userController = require("../controllers/userController");
 const password = require("../middleware/password");
-//mise en place 1ère route utilisateur
+//mise en place route inscription utilisateur
 router.post("/signup", password, userController.signup);
-//mise en place 2ème route
+//mise en place route connexion utilisateur
 router.post("/login", userController.login);
 
 module.exports = router;

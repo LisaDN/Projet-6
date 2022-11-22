@@ -26,7 +26,7 @@ module.exports = (req, res, next) => {
     next();
   } else {
     return res.status(400).json({
-      error:
+      message:
         "Mot de passe trop faible :" +
         schema.validate("req.body.password", {
           list: true,

@@ -66,7 +66,7 @@ exports.modifySauce = (req, res, next) => {
           { _id: req.params.id },
           { ...sauceObject, _id: req.params.id }
         )
-          .then(() => res.status(200).json({ message: "Sauce modifié!" }))
+          .then(() => res.status(200).json({ message: "Sauce modifiée !" }))
           .catch((error) => res.status(401).json({ error }));
       }
     })
@@ -84,7 +84,7 @@ exports.deleteSauce = (req, res, next) => {
         fs.unlink(`images/${filename}`, () => {
           Sauce.deleteOne({ _id: req.params.id })
             .then(() => {
-              res.status(200).json({ massage: "Sauce supprimé !" });
+              res.status(200).json({ message: "Sauce supprimée !" });
             })
             .catch((error) => res.status(401).json({ error }));
         });

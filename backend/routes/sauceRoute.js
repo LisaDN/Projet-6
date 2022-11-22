@@ -1,10 +1,11 @@
 const express = require("express");
+//permet de créer des routeurs séparés pour chaque route principale
 const router = express.Router();
 
 const auth = require("../middleware/auth");
 const multer = require("../middleware/multer-config");
 
-const sauceController = require("../controller/sauceController");
+const sauceController = require("../controllers/sauceController");
 
 //mise en place route sauces,
 router.get("/", auth, sauceController.getAllSauce);
