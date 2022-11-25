@@ -2,7 +2,7 @@
 
 Construire une API sécurisée
 ------------------------------------------------------------------------
-##Installation
+###Installation
 
 A la racine du dossier lancer la commande _npm install_ pour installer Node.js
 
