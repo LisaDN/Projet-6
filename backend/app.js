@@ -11,7 +11,7 @@ const xss = require("xss-clean");
 const mongoSanitize = require("express-mongo-sanitize");
 
 // mise en place rate limit
-const rateLimit = require("express-mongo-sanitize");
+const rateLimit = require("express-rate-limit");
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
   max: 100, //Limiter chaque IP à 100 requêtes par fenêtre (ici, par 15 minutes)
