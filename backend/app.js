@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-
+//initialisation route pour multer (accessibilité au dossier images)
 app.use("/images", express.static(path.join(__dirname, "images")));
 //initialisation routes de l'API
 app.use("/api/auth", userRoute);
