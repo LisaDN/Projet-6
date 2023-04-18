@@ -19,7 +19,7 @@ Indiquer dans le fichier .env fourni dans le dossier backend :
 
 Lancer le frontend avec _npm start_
 
-Lancer le backend avec _nodemon server_
+Lancer le backend avec _nodemon server_ ou _node server_
 
   
 
